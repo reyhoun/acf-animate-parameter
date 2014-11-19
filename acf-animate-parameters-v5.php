@@ -58,31 +58,13 @@ class acf_field_animate_parameters extends acf_field {
 							'shake'=>'shake',	'swing'=>'swing',	'tada'=>'tada',	'wobble'=>'wobble',	'bounceIn'=>'bounceIn',
 							'bounceInDown'=>'bounceInDown',	'bounceInLeft'=>'bounceInLeft',	'bounceInRight'=>'bounceInRight',
 							'bounceInUp'=>'bounceInUp',	'fadeIn'=>'fadeIn',	'fadeInDown'=>'fadeInDown',	'fadeInDownBig'=>'fadeInDownBig',
-							'fadeInLeft'=>'fadeInLeft',
-				'fadeInLeftBig'=>'fadeInLeftBig',
-				'fadeInRight'=>'fadeInRight',
-				'fadeInRightBig'=>'fadeInRightBig',
-				'fadeInUp'=>'fadeInUp',
-				'fadeInUpBig'=>'fadeInUpBig',
-				'flip'=>'flip',
-				'flipInX'=>'flipInX',
-				'flipInY'=>'flipInY',
-				'lightSpeedIn'=>'lightSpeedIn',
-				'rotateIn'=>'rotateIn',
-				'rotateInDownLeft'=>'rotateInDownLeft',
-				'rotateInDownRight'=>'rotateInDownRight',
-				'rotateInUpLeft'=>'rotateInUpLeft',
-				'rotateInUpRight'=>'rotateInUpRight',
-				'rollIn'=>'rollIn',
-				'zoomIn'=>'zoomIn',
-				'zoomInDown'=>'zoomInDown',
-				'zoomInLeft'=>'zoomInLeft',
-				'zoomInRight'=>'zoomInRight',
-				'zoomInUp'=>'zoomInUp',
-				'slideInDown'=>'slideInDown',
-				'slideInLeft'=>'slideInLeft',
-				'slideInRight'=>'slideInRight',
-				'slideInUp'=>'slideInUp'),
+							'fadeInLeft'=>'fadeInLeft', 'fadeInLeftBig'=>'fadeInLeftBig', 'fadeInRight'=>'fadeInRight',
+							'fadeInRightBig'=>'fadeInRightBig', 'fadeInUp'=>'fadeInUp', 'fadeInUpBig'=>'fadeInUpBig', 'flip'=>'flip',
+							'flipInX'=>'flipInX', 'flipInY'=>'flipInY', 'lightSpeedIn'=>'lightSpeedIn', 'rotateIn'=>'rotateIn',
+							'rotateInDownLeft'=>'rotateInDownLeft', 'rotateInDownRight'=>'rotateInDownRight', 'rotateInUpLeft'=>'rotateInUpLeft',
+							'rotateInUpRight'=>'rotateInUpRight', 'rollIn'=>'rollIn', 'zoomIn'=>'zoomIn', 'zoomInDown'=>'zoomInDown',
+							'zoomInLeft'=>'zoomInLeft', 'zoomInRight'=>'zoomInRight', 'zoomInUp'=>'zoomInUp', 'slideInDown'=>'slideInDown',
+							'slideInLeft'=>'slideInLeft', 'slideInRight'=>'slideInRight', 'slideInUp'=>'slideInUp'),
 
 		);
 		
@@ -252,9 +234,9 @@ class acf_field_animate_parameters extends acf_field {
 		*  This will show what data is available
 		*/
 		
-		echo '<pre>';
-			print_r( $field );
-		echo '</pre>';
+		// echo '<pre>';
+		// 	print_r( $field );
+		// echo '</pre>';
 		
 		
 		/*
@@ -274,55 +256,17 @@ class acf_field_animate_parameters extends acf_field {
 					  <input type="radio" name="' . $field['name'] . '[enable_effect]"'; if (!$field_value['enable_effect']) { echo 'checked';}  echo ' value="0">' . __("No", "acf-animate_parameters") . '<br>';	
 			echo '</div>';
 
+		for ($i=1; $i <= $field['select_animate_type'] ; $i++) { 
 
 			echo '<div class="">';
-				echo '<label class="" for="'. $field['key'] .'">select animate type 1</label> ';
-				echo '<select name="' . $field['name'] . '[select_animate_type_1]" class="js-select2">';
+				echo '<label class="" for="'. $field['key'] .'">select animate type '. $i . '</label> ';
+				echo '<select name="' . $field['name'] . '[select_animate_type_'. $i . ']" class="js-select2">';
 							foreach ( $field['list_values'] as $k => $v ) {
-								echo '<option value="' . $k . '"' . selected($field_value['select_animate_type_1'], $k, false) . ' >' . $k . '</option>' ;
+								echo '<option value="' . $k . '"' . selected($field_value['select_animate_type_' . $i], $k, false) . ' >' . $k . '</option>' ;
 							}
 				echo '</select>';	
 			echo '</div>';
-			
-
-			echo '<div class="">';
-				echo '<label class="" for="'. $field['key'] .'">select animate type 2</label> ';
-				echo '<select name="' . $field['name'] . '[select_animate_type_2]" class="js-select2">';
-							foreach ( $field['list_values'] as $k => $v ) {
-								echo '<option value="' . $k . '"' . selected($field_value['select_animate_type_2'], $k, false) . ' >' . $k . '</option>' ;
-							}
-				echo '</select>';
-			echo '</div>';
-			
-
-			echo '<div class="">';
-				echo '<label class="" for="'. $field['key'] .'">select animate type 3</label> ';
-				echo '<select name="' . $field['name'] . '[select_animate_type_3]" class="js-select2">';
-							foreach ( $field['list_values'] as $k => $v ) {
-								echo '<option value="' . $k . '"' . selected($field_value['select_animate_type_3'], $k, false) . ' >' . $k . '</option>' ;
-							}
-				echo '</select>';
-			echo '</div>';
-			
-
-			echo '<div class="">';
-				echo '<label class="" for="'. $field['key'] .'">select animate type 4</label> ';
-				echo '<select name="' . $field['name'] . '[select_animate_type_4]" class="js-select2">';
-							foreach ( $field['list_values'] as $k => $v ) {
-								echo '<option value="' . $k . '"' . selected($field_value['select_animate_type_4'], $k, false) . ' >' . $k . '</option>' ;
-							}
-				echo '</select>';
-			echo '</div>';
-
-
-			echo '<div class="">';
-				echo '<label class="" for="'. $field['key'] .'">select animate type 1</label> ';
-				echo '<select name="' . $field['name'] . '[select_animate_type]" class="js-select2">';
-							for ( $i=1; $i<5; $i++ ) {
-								echo '<option value="' . $i . '"' . selected($field_value['select_animate_type'], $i, false) . ' >' . $i . '</option>' ;
-							}
-				echo '</select>';
-			echo '</div>';
+		}
 
 
 			echo '<div class="">';
