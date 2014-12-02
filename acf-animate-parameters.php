@@ -1,14 +1,14 @@
 <?php
 
 /*
-Plugin Name: Advanced Custom Fields: Animate Parameters
-Plugin URI: PLUGIN_URL
-Description: DESCRIPTION
-Version: 1.0.0
-Author: AUTHOR_NAME
-Author URI: AUTHOR_URL
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Plugin Name: Advanced Custom Fields: Animate Parameters
+ * Plugin URI: https://github.com/reyhoun/acf-animate-parameter
+ * Description: Get Animation Parameters from user.
+ * Version: 1.1.0
+ * Author: Reyhoun Team
+ * Author URI: http://reyhoun.com/
+ * License: GPLv2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 
@@ -30,20 +30,4 @@ function include_field_types_animate_parameters( $version ) {
 }
 
 add_action('acf/include_field_types', 'include_field_types_animate_parameters');	
-
-
-
-
-// 3. Include field type for ACF4
-function register_fields_animate_parameters() {
-	
-	include_once('acf-animate-parameters-v4.php');
-	
-}
-
-add_action('acf/register_fields', 'register_fields_animate_parameters');	
-
-
-
-	
 ?>
