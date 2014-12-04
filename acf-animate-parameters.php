@@ -4,7 +4,7 @@
  * Plugin Name: Advanced Custom Fields: Animate Parameters
  * Plugin URI: https://github.com/reyhoun/acf-animate-parameter
  * Description: Get Animation Parameters from user.
- * Version: 1.1.0
+ * Version: 1.1.2
  * Author: Reyhoun Team
  * Author URI: http://reyhoun.com/
  * License: GPLv2 or later
