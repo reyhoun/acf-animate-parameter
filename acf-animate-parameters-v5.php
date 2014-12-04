@@ -130,7 +130,7 @@ class acf_field_animate_parameters extends acf_field {
 		));
 
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Select Animate Type 1','acf-animate_parameters'),
+			'label'			=> __('Animate Type 1','acf-animate_parameters'),
 			'instructions'	=> __('','acf-animate_parameters'),
 			'type'			=> 'select',
 			'ui'			=> 1,
@@ -139,7 +139,7 @@ class acf_field_animate_parameters extends acf_field {
 		));
 
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Select Animate Type 2','acf-animate_parameters'),
+			'label'			=> __('Animate Type 2','acf-animate_parameters'),
 			'instructions'	=> __('','acf-animate_parameters'),
 			'type'			=> 'select',
 			'ui'			=> 1,
@@ -148,7 +148,7 @@ class acf_field_animate_parameters extends acf_field {
 		));
 
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Select Animate Type 3','acf-animate_parameters'),
+			'label'			=> __('Animate Type 3','acf-animate_parameters'),
 			'instructions'	=> __('','acf-animate_parameters'),
 			'type'			=> 'select',
 			'ui'			=> 1,
@@ -157,7 +157,7 @@ class acf_field_animate_parameters extends acf_field {
 		));
 
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Select Animate Type 4','acf-animate_parameters'),
+			'label'			=> __('Animate Type 4','acf-animate_parameters'),
 			'instructions'	=> __('','acf-animate_parameters'),
 			'type'			=> 'select',
 			'ui'			=> 1,
@@ -167,7 +167,7 @@ class acf_field_animate_parameters extends acf_field {
 
 		acf_render_field_setting( $field, array(
 			'label'			=> __('Select Animate Type','acf-animate_parameters'),
-			'instructions'	=> __('','acf-animate_parameters'),
+			'instructions'	=> __('Select number of animate select type to show user.','acf-animate_parameters'),
 			'type'			=> 'select',
 			'ui'			=> 1,
 			'name'			=> 'select_animate_type',
@@ -182,7 +182,7 @@ class acf_field_animate_parameters extends acf_field {
 			'instructions'	=> __('','acf-animate_parameters'),
 			'type'			=> 'number',
 			'name'			=> 'animate_delay_time',
-			'prepend'		=> '',
+			'append'		=> 'ms'
 		));
 
 		acf_render_field_setting( $field, array(
@@ -190,7 +190,7 @@ class acf_field_animate_parameters extends acf_field {
 			'instructions'	=> __('','acf-animate_parameters'),
 			'type'			=> 'number',
 			'name'			=> 'increase_delay',
-			'prepend'		=> '',
+			'append'		=> 'ms',
 		));
 
 	}
