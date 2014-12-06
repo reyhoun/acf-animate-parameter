@@ -263,7 +263,7 @@ class acf_field_animate_parameters extends acf_field {
 					$e.= '<option value="' . $k . '"' . selected($field_value['select_animate_type_' . $i], $k, false) . ' >' . $k . '</option>' ;
 				}
 			$e.= '</select>';	
-			$e.= '</div></div></div>';
+			$e.= '</div></div>';
 		}
 			
 			$e.= '<ul class="acf-hl">';
