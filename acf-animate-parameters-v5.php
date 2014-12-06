@@ -240,14 +240,14 @@ class acf_field_animate_parameters extends acf_field {
 		
 		
 			$e=  '<div class="acf-label">';
-			$e.= '<label class="" for="' . $field['key'] . '">' . __("Effect Name", "acf-image-resize-parameter") . '</label>';
+			$e.= '<label class="" for="' . $field['key'] . '">' . __("Effect Name", "acf-animate_parameters") . '</label>';
 			$e.= '<div class="acf-input">';
 			$e.=  '<input type="text" name="' . $field['name'] . '[effect_name]" id="' . $field['key'] . '-effect-name"  step="1" value="' . $field_value['effect_name'] . '"/>';
 			$e.= '</div></div>';
 
 
 			$e.= '<div class="acf-label">';
-			$e.= '<label class="" for="' . $field['key'] . '">' . __("Enable Effect", "acf-image-resize-parameter") . '</label>';
+			$e.= '<label class="" for="' . $field['key'] . '">' . __("Enable Effect", "acf-animate_parameters") . '</label>';
 			$e.= '<div class="acf-input">';
 			$e.=  '<ul class="acf-radio-list acf-hl"><li><label><input type="radio" name="' . $field['name'] . '[enable_effect]"'; if ($field_value['enable_effect']) { $e.= 'checked'; } $e.= ' value="1">' . __("Yes", "acf-animate_parameters") . '</label></li><li><label>';
 			$e.=  '<input type="radio" name="' . $field['name'] . '[enable_effect]"'; if (!$field_value['enable_effect']) { $e.= 'checked'; } $e.= ' value="0">' . __("No", "acf-animate_parameters") . '</label></li></ul>';
@@ -256,21 +256,21 @@ class acf_field_animate_parameters extends acf_field {
 		for ($i=1; $i <= $field['select_animate_type'] ; $i++) { 
 
 			$e.= '<div class="acf-label">';
-			$e.= '<label class="" for="'. $field['key'] .'">Select Animate Type '. $i . '</label> ';
-			$e.= '<div class="acf-input">';
+			$e.= '<div class="acf-input-prepend">' . __("Animate #", "acf-animate_parameters") . $i . '</div>';
+			$e.= '<div class="acf-input-wrap">';
 			$e.= '<select name="' . $field['name'] . '[select_animate_type_'. $i . ']" class="js-select2">';
 				foreach ( $field['list_values'] as $k => $v ) {
 					$e.= '<option value="' . $k . '"' . selected($field_value['select_animate_type_' . $i], $k, false) . ' >' . $k . '</option>' ;
 				}
 			$e.= '</select>';	
-			$e.= '</div></div>';
+			$e.= '</div></div></div>';
 		}
 			
 			$e.= '<ul class="acf-hl">';
-			$e.= '<li style="width:55%; padding-right:15px;"><div class="acf-input-prepend">' . __("Animate Start Delay Time", "acf-image-resize-parameter") . '</div><div class="acf-input-append">ms</div><div class="acf-input-wrap">';
+			$e.= '<li style="width:55%; padding-right:15px;"><div class="acf-input-prepend">' . __("Animate Start Delay Time", "acf-animate_parameters") . '</div><div class="acf-input-append">ms</div><div class="acf-input-wrap">';
 			$e.= '<input type="number" name="' . $field['name'] . '[animate_delay_time]" id="' . $field['key'] . '-animate_delay_time"  step="1" value="' . $field_value['animate_delay_time'] . '"/>';
 			$e.= '</div></li>';
-			$e.= '<li style="float:none;"><div class="acf-input-prepend">' . __("Increase Delay", "acf-image-resize-parameter") . '</div><div class="acf-input-append">ms</div><div class="acf-input-wrap">';
+			$e.= '<li style="float:none;"><div class="acf-input-prepend">' . __("Increase Delay", "acf-animate_parameters") . '</div><div class="acf-input-append">ms</div><div class="acf-input-wrap">';
 			$e.= '<input type="number" name="' . $field['name'] . '[increase_delay]" id="' . $field['key'] . '-increase-delay"  step="1" value="' . $field_value['increase_delay'] . '"/>';
 			$e.= '</div></li></ul>';
 			
