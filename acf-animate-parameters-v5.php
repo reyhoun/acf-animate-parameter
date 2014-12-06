@@ -265,24 +265,15 @@ class acf_field_animate_parameters extends acf_field {
 			$e.= '</select>';	
 			$e.= '</div></div>';
 		}
-
-
-			$e.= '<div class="acf-label">';
-			$e.= '<label class="" for="' . $field['key'] . '">' . __("Animate Start Delay Time", "acf-image-resize-parameter") . '</label>';
-			$e.= '<div class="acf-input">';
-			$e.= '<div class="acf-input-append">ms</div>';
-			$e.= '<div class="acf-input-wrap">';
+			
+			$e.= '<ul class="acf-hl">';
+			$e.= '<li style="width:55%; padding-right:15px;"><div class="acf-input-prepend">' . __("Animate Start Delay Time", "acf-image-resize-parameter") . '</div><div class="acf-input-append">ms</div><div class="acf-input-wrap">';
 			$e.= '<input type="number" name="' . $field['name'] . '[animate_delay_time]" id="' . $field['key'] . '-animate_delay_time"  step="1" value="' . $field_value['animate_delay_time'] . '"/>';
-			$e.= '</div></div></div>';
-
-			$e.= '<div class="acf-label">';
-			$e.= '<label class="" for="' . $field['key'] . '">' . __("Increase Delay", "acf-image-resize-parameter") . '</label>';
-			$e.= '<div class="acf-input">';
-			$e.= '<div class="acf-input-append">ms</div>';
-			$e.= '<div class="acf-input-wrap">';
+			$e.= '</div></li>';
+			$e.= '<li style="float:none;"><div class="acf-input-prepend">' . __("Increase Delay", "acf-image-resize-parameter") . '</div><div class="acf-input-append">ms</div><div class="acf-input-wrap">';
 			$e.= '<input type="number" name="' . $field['name'] . '[increase_delay]" id="' . $field['key'] . '-increase-delay"  step="1" value="' . $field_value['increase_delay'] . '"/>';
-			$e.= '</div></div></div>';
-
+			$e.= '</div></li></ul>';
+			
 			echo $e;
 	}
 	
