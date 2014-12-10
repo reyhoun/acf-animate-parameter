@@ -54,7 +54,7 @@ class acf_field_animate_parameters extends acf_field {
 			'select_animate_type_4'	=> 'bounce',
 			'animate_delay_time'	=> 10,
 			'increase_delay'		=> 10,
-			'list_values'	=> array('bounce'=>'bounce',	'flash'=>'flash',	'pulse'=>'pulse',	'rubberBand'=>'rubberBand',	
+			'list_values'	=> array('none'=>'-none-',	'bounce'=>'bounce',	'flash'=>'flash',	'pulse'=>'pulse',	'rubberBand'=>'rubberBand',	
 							'shake'=>'shake',	'swing'=>'swing',	'tada'=>'tada',	'wobble'=>'wobble',	'bounceIn'=>'bounceIn',
 							'bounceInDown'=>'bounceInDown',	'bounceInLeft'=>'bounceInLeft',	'bounceInRight'=>'bounceInRight',
 							'bounceInUp'=>'bounceInUp',	'fadeIn'=>'fadeIn',	'fadeInDown'=>'fadeInDown',	'fadeInDownBig'=>'fadeInDownBig',
@@ -110,12 +110,6 @@ class acf_field_animate_parameters extends acf_field {
 		*  Please note that you must also have a matching $defaults value for the field name (font_size)
 		*/
 		
-		acf_render_field_setting( $field, array(
-			'label'			=> __('Effect Name','acf-animate_parameters'),
-			'instructions'	=> __('','acf-animate_parameters'),
-			'type'			=> 'text',
-			'name'			=> 'effect_name',
-		));
 
 		acf_render_field_setting( $field, array(
 			'label'			=> __('Enable Effect','acf-animate_parameters'),
@@ -214,11 +208,9 @@ class acf_field_animate_parameters extends acf_field {
 	
 	function render_field( $field ) {
 		
-		
 		  // add empty value (allows '' to be selected)
         if( empty($field['value']) ){
 
-            $field['value']['effect_name'] 			= $field['effect_name'];
             $field['value']['enable_effect'] 		= $field['enable_effect'];
             $field['value']['select_animate_type_1'] 	= $field['select_animate_type_1'];
             $field['value']['select_animate_type_2'] 	= $field['select_animate_type_2'];
@@ -238,15 +230,8 @@ class acf_field_animate_parameters extends acf_field {
 		// 	print_r( $field );
 		// echo '</pre>';
 		
-		
-			$e=  '<div class="acf-label">';
-			$e.= '<label class="" for="' . $field['key'] . '">' . __("Effect Name", "acf-animate_parameters") . '</label>';
-			$e.= '<div class="acf-input">';
-			$e.=  '<input type="text" name="' . $field['name'] . '[effect_name]" id="' . $field['key'] . '-effect-name"  step="1" value="' . $field_value['effect_name'] . '"/>';
-			$e.= '</div></div>';
 
-
-			$e.= '<div class="acf-label">';
+			$e = '<div class="acf-label">';
 			$e.= '<label class="" for="' . $field['key'] . '">' . __("Enable Effect", "acf-animate_parameters") . '</label>';
 			$e.= '<div class="acf-input">';
 			$e.=  '<ul class="acf-radio-list acf-hl"><li><label><input type="radio" name="' . $field['name'] . '[enable_effect]"'; if ($field_value['enable_effect']) { $e.= 'checked'; } $e.= ' value="1">' . __("Yes", "acf-animate_parameters") . '</label></li><li><label>';
