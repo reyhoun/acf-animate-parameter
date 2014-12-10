@@ -1,3 +1,10 @@
+#### 1.2.0
+* better ui for user
+* fix some language support bug
+* fix small bug in html markup
+* remove effect name
+* add -none- value to select animate type field
+
 #### 1.1.2
 * fix version number.
 
